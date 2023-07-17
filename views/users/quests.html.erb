@@ -1,0 +1,25 @@
+<div class="flex-wrapper">
+  <% if is_auth? @user %>
+    <h1 class="margin_less">мои квесты</h1>
+  <% else %>
+    <h1 class="margin_less">квесты</h1>
+  <% end %>
+  <% @quests.each do |quest| %>
+
+    <div class="quest_flex_row">
+      <%= link_to quest.title, quest, class: "title" %>
+      <button data-href="<%= quest_url(quest) %>" class="copy_btn"><i class="fa-solid fa-copy"></i></button>
+      <% if is_auth? @user %>
+        <%= link_to edit_quest_path(quest) do %>
+          <i class='fa-solid fa-pen-to-square'></i>
+        <% end %>
+        <%= button_to quest, method: :delete do %>
+          <i class='fa-regular fa-trash-can'></i>
+        <% end %>
+      <% end %>
+    </div>
+
+  <% end %>
+</div>
+
+<%= javascript_include_tag "copy_button", "data-turbo-track" => true %>

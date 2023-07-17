@@ -1,0 +1,17 @@
+<h1>Update Quest Point: <%= @point.title %> </h1>
+
+<%= form_for @point, url: { action: "update" }, local: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :images, "Images" %>
+  <%= f.file_field :images, :multiple => true %>
+
+  <%= f.label :content, "Content" %>
+  <%= f.text_area :content %>
+
+  <%= f.submit "Update point" %>
+<% end %>

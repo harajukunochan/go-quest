@@ -1,0 +1,17 @@
+<div class="form_auth_block">
+  <div class="form_auth_block_content">
+    <p class="form_auth_block_head_text">создание квеста</p>
+    <%= form_for @quest, local: true, class: "form_auth_style" do |f| %>
+      <%= f.label :title, "название квеста" %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description, "описание квеста"  %>
+      <%= f.text_area :description %>
+
+      <%#= f.label :image, "обложку на бочку" %>
+      <%#= f.file_field :image, accept: "image/*" %>
+
+      <%= f.submit "Продолжить" %>
+    <% end %>
+  </div>
+</div>

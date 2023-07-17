@@ -1,0 +1,7 @@
+<h1>Quests</h1>
+
+<ol>
+    <% @quests.each do |quest| %>
+        <li> <%= link_to quest.title, quest %> </li>
+    <% end %>
+</ol>

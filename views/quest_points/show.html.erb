@@ -1,0 +1,48 @@
+<div class="flex-wrapper">
+  <h1> <%= @point.title %> </h1>
+
+  <pre><%= @point.description %></pre>
+
+  <% @content.each do |el| %>
+    <div class="variant">
+      <label>
+        <input type="checkbox" value="<%= el["content"]["value"] %>" data-true="<%= el["truthful"].to_s %>">
+        <% if el["content"]["type"] == 'image' %>
+        <% img = @point.images.find {|img| img.filename == el["content"]["value"] } %>
+          <%= image_tag img %>
+        <% else %>
+          <span> <%= el["content"]["value"] %> </span>
+        <% end %>
+      </label>
+    </div>
+  <% end %>
+
+  <button id="get_result"> Ну шо? </button>
+
+  <%= link_to "К квесту", @quest %>
+
+  <%
+=begin%>
+ <pre>
+    <%= @point.content %>
+  </pre>
+<%
+=end%>
+
+  <%
+=begin%>
+ <% @point.images.each do |image| %>
+    <div>
+      <p> <%= image.filename %> </p>
+      <%= image_tag image %>
+    </div>
+  <% end %>
+<%
+=end%>
+
+  <% if is_auth? @quest.user %>
+      <%= link_to "Удалить", quest_quest_point_path(@quest, @point), data: { "turbo-method": :delete } %>
+  <% end %>
+</div>
+
+<%= javascript_include_tag "get_result", "data-turbo-track" => true %>

@@ -1,0 +1,34 @@
+<div class="form_auth_block">
+  <div class="form_auth_block_content">
+    <p class="form_auth_block_head_text">Настройки</p>
+      <%= form_for @quest, local: true, class: "form_auth_style" do |f| %>
+        <%= f.label :title, "Название" %>
+        <%= f.text_field :title %>
+
+        <%= f.label :description, "Описание" %>
+        <%= f.text_area :description %>
+
+        <%#= f.label :image, "Image" %>
+        <%#= f.file_field :image %>
+
+        <%= f.label :public do %>
+        <%= f.check_box :public %>
+        <span>Публичный?</span>
+        <% end %>
+
+        <%= f.submit "Изменить" %>
+      <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+<div>
+  <%= button_to "Destroy this quest", @quest, method: :delete  if is_auth? @user %>
+</div>
+
+
+

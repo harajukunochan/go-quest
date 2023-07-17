@@ -1,0 +1,9 @@
+<% if flash.any? %>
+<ul class="notifications"> 
+    <% flash.each do |type, messages| %>
+        <% messages.each do |message| %>
+        <li class="notification"> <%= message %> </li>
+        <% end %>
+    <% end %>
+</ul>
+<% end %>

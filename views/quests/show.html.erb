@@ -1,0 +1,34 @@
+<div class="flex-wrapper">
+
+  <h1 class="margin_less"><%= @quest.title %> <span class="mini-text"> by <%= link_to @quest.user.name, @quest.user %> </span></h1>
+  <pre><%= @quest.description %></pre>
+
+  <% if is_auth? @quest.user %>
+  <div>
+    <%= link_to "Добавить пункт", new_quest_quest_point_path(@quest) %>
+    <%= link_to "Настройки", edit_quest_path(@quest) %>
+  </div>
+  <% end %>
+
+  <h3>Вопросики:</h3>
+  <ol>
+    <% @elements.each do |el| %>
+    <li>
+      <% if el.kind_of?(Hash) %>
+        <% section = el[:section] %>
+        <h4> <%= section.title %> <h4>
+        <pre> <%= section.description %> </pre>
+        <ol>
+          <% el[:points].each do |point| %>
+            <li>
+              <h4> <%= point.title %> </h4>
+            </li>
+          <% end %>
+        </ol>
+      <% else %>
+        <h4> <%= link_to el.title, quest_quest_point_path(@quest, el) %> </h4>
+      <% end %>
+    </li>
+    <% end %>
+  </ol>
+</div>

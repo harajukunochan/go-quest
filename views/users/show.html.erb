@@ -1,0 +1,10 @@
+<div class="flex-wrapper">
+  <h1><%= @user.name %></h1>
+  <% if is_auth? @user %>
+    <%= link_to "Создать квест", new_quest_path %>
+    <%= link_to "Мои квесты", user_quests_path(@user) %>
+    <%= link_to "Настройки", edit_user_path(@user) %>
+  <% else %>
+    <%= link_to "Квесты", user_quests_path(@user) %>
+  <% end %>
+</div>

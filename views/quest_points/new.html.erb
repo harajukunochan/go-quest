@@ -1,0 +1,43 @@
+<div class="form_auth_block">
+  <div class="form_auth_block_content">
+    <p class="form_auth_block_head_text">Создать пункт</p>
+
+    <%= form_for @point, url: { action: "create" }, local: true do |f| %>
+      <%= f.label :title, "Название" %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description, "Вопрос" %>
+      <%= f.text_area :description %>
+
+      <div class="hidden">
+        <!--
+        <%= f.label :images do %>
+          Картиночек:&nbsp;<span id="counter">0</span>
+        <% end %>
+        <%= f.file_field :images, :multiple => true %>
+        -->
+        <%= f.label :content, "Контент" %>
+        <%= f.text_area :content %>
+      </div>
+
+      <%
+=begin%>
+ <label for="question">Вопрос</label>
+      <textarea id="question" name="question"></textarea>
+<%
+=end%>
+
+      <div class="with_btn row controls">
+        <span>Варианты ответа:</span>
+        <button type="button" id="add_image_btn">+картиночка</button>
+        <button type="button" id="add_text_btn">+текст</button>
+      </div>
+
+      <%= f.submit "Создать" %>
+    <% end %>
+
+  </div>
+</div>
+
+<%= javascript_include_tag "new_quest_point", "data-turbo-track" => true %>
+

@@ -1,0 +1,28 @@
+<div class="form_auth_block">
+  <div class="form_auth_block_content">
+    <p class="form_auth_block_head_text">Настройки</p>
+    <%= form_for @user, local: true, class: "form_auth_style" do |f| %>
+      <%= f.label :name, "ник" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :password, "пароль" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "ещё разок" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%#= f.label :avatar, "фото4ка (необязательно)", accept: "image/*" %>
+      <%#= f.file_field :avatar %>
+
+      <%= f.label :description, "краткое био" %>
+      <%= f.text_area :description %>
+    <% end %>
+    <div class="flex_row">
+      <input type="submit" form="edit_user_<%= @user.id %>" value="продолжить">
+      <%= button_to "удалить аккаунт", @user, method: :delete  if is_auth? @user %>
+    </div>
+  </div>
+  <div class="flex_row">
+      <%= link_to "Выйти", logout_path, data: { "turbo-method": :delete } %>
+  </div>
+</div>

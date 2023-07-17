@@ -1,0 +1,9 @@
+<h1>Users</h1>
+
+<ol id="users">
+  <% @users.each do |user| %>
+  <li>
+    <%= link_to user.name, user %>
+  </li>
+  <% end %>
+</ol>

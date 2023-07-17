@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/40b5328fca.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="flex-wrapper">
+      <div class="header-a back_btn">
+        <%= link_to "Назад", :back %>
+      </div>
+      <header>
+        <div class="header-a">
+          <%= link_to "главная", root_path %>
+        </div>
+        <div class="header-a">
+          <%= link_to "faq", faq_path %>
+        </div>
+        <div class="header-a">
+          <%= link_to "кто мы", contact_path %>
+        </div>
+      </header>
+    </div>
+    <%= render "shared/notification" %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<div class="form_auth_block">
+  <div class="form_auth_block_content">
+    <p class="form_auth_block_head_text">Регистрация</p>
+    <%= form_for @user, local: true, class: "form_auth_style" do |f| %>
+      <%= f.label :name, 'Имя' %>
+      <%= f.text_field :name, required: true %>
+
+      <%= f.label :password, 'Пароль' %>
+      <%= f.password_field :password, required: true %>
+
+      <%= f.label :password_confirmation, "Ещё разок" %>
+      <%= f.password_field :password_confirmation, required: true %>
+
+      <%= f.submit "Зарегистрироваться", class: "form_auth_button" %>
+    <% end %>
+  </div>
+</div>
