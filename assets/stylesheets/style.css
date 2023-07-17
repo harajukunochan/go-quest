@@ -1,0 +1,451 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'F77 Minecraft';
+    background: no-repeat;
+    background: linear-gradient(180deg, rgba(251, 245, 250, 0.981493) 0%, #ECD3FB 45.1%,
+     rgba(191, 174, 241, 0.697714) 76.87%, rgba(182, 164, 240, 0.655863) 99.97%,
+     rgba(55, 13, 222, 0.050845) 99.98%, rgba(44, 0, 221, 0.00208346) 99.99%, rgba(217, 217, 217, 0) 100%);;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+  display: inline-block;
+  position: sticky;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-a {
+  display: inline-flex;
+  justify-content: stretch;
+  align-items: stretch;
+  min-width: 200px;
+  max-width: max-content;
+}
+
+h1 {
+  position: relative;
+  font-family: 'F77 Minecraft';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 128px;
+  justify-self: center;
+  text-align: justify;
+  background: conic-gradient(from 183.91deg at 53.63% 46.95%, #6000FC 0deg, rgba(96, 0, 252, 0) 297.37deg, #6000FC 360deg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1em;
+  padding-top: 0;
+}
+
+.flex-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+button {
+  font-family: 'F77 Minecraft';
+  font-style: normal;
+  font-weight: 200;
+  background-color: #ECD3FB;
+  min-width: 200px;
+  max-width: max-content;
+  text-align: center;
+  justify-content: center;
+  width: auto;
+  margin: 2em;
+  min-height: 10em;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+button:active {
+  transform: scale(1.1);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+/*почему-то поломало кнопки в формах авторизации*/
+a, input[type="submit"], button {
+  position: relative;
+  font-family: 'F77 Minecraft';
+  font-style: normal;
+  text-emphasis-color: #9000ff;
+  text-decoration-color: #000000;
+  font-weight: 200;
+  text-justify: center;
+  vertical-align: middle;
+  background-color: #ffffff;
+  min-width: 200px;
+  max-width: max-content;
+  justify-content: center;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  min-height: 3em;
+  border-style: ridge;
+  border-color: rgb(0, 0, 238);
+  border-width: 3px;
+}
+
+a {
+  padding-top: .7em;
+  display: inline-block;
+}
+
+.form_auth_block {
+  width: 500px;
+  min-height: 500px;
+  margin: 0 auto;
+  padding-bottom: 3em;
+}
+
+.form_auth_block_content {
+  padding-top: 5%;
+}
+
+.form_auth_block_head_text{
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  background: #ffffff;
+}
+
+.form_auth_block label, .row {
+  font-family: inherit;
+  display: flex;
+  text-align: center;
+  padding: 10px;
+  background: #ffffff;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form_auth_block input:not([type="submit"]), textarea {
+  display: flex;
+  margin: 0 auto;
+  width: 500px;
+  height: 45px;
+  border:none;
+  outline: none;
+  padding: 1em;
+}
+
+textarea {
+  height: 15em;
+}
+
+input:focus {
+  color: #000000;
+  border: 2px solid #436fea;
+}
+
+::-webkit-input-placeholder {color:#3f3f44; padding-left: 10px;}
+::-moz-placeholder          {color:#3f3f44; padding-left: 10px;}
+:-moz-placeholder           {color:#3f3f44; padding-left: 10px;}
+:-ms-input-placeholder      {color:#3f3f44; padding-left: 10px;}
+
+.select-one {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  min-width: 500px;
+  min-height: 45px;
+  border:none;
+  outline: none;
+  font-family: 'F77 Minecraft';
+  font-weight: 200;
+  font-size: 15rem;
+  /*чета он сука не хочет шрифт менять*/
+}
+
+.question-type {
+  display: none;
+}
+
+.back_btn {
+  align-self: flex-start;
+  max-width: 100px;
+  max-height: 2em;
+}
+
+.back_btn a {
+  align-self: flex-start;
+  max-width: 100px;
+  min-width: 100px;
+  padding-top: 0.4em;
+  min-height: 2em;
+  max-height: 2em;
+  font-size: .8em;
+}
+
+.flex_row {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+.flex_row input {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.margin_less {
+  margin: 0.5em;
+}
+
+.quest_flex_row {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.quest_flex_row .title {
+  flex-grow: 1;
+}
+
+
+.quest_flex_row * {
+  margin-top: 0;
+  max-width: none;
+  min-height: auto;
+}
+
+.quest_flex_row > * {
+  /* height: 3em; */
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  margin: .4em;
+}
+
+.quest_flex_row a:not(.title), .quest_flex_row button {
+  padding: 1em;
+  min-width: auto;
+}
+
+.quest_flex_row form button {
+  height: 100%;
+  width: 100%;
+}
+
+.quest_flex_row i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@media screen and (max-width: 700px) {
+  .back_btn {
+    display: none;
+  }
+}
+
+
+.mini-text {
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #6000FC;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(20deg) translate(30%, -50%) scale(1);
+  transition: 0.2s;
+  animation: 1s infinite alternate by;
+  animation-timeline: linear;
+  font-size: 0.2em;
+}
+
+@keyframes by {
+  from {
+    transform: rotate(20deg) translate(30%, -50%) scale(1);
+  }
+
+  to {
+    transform: rotate(20deg) translate(30%, -50%) scale(1.1);
+  }
+}
+
+.mini-text a {
+  width: auto;
+  height: auto;
+  background: none;
+  font-size: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration-color: inherit;
+}
+
+pre {
+  font-size: 1rem;
+  font-family: 'F77 Minecraft';
+}
+
+.form_auth_block label input[type="checkbox"] {
+  width: 3em;
+  min-width: none;
+  max-width: unset;
+  margin: 0 1em 0 0;
+}
+
+.form_auth_block label {
+  align-items: center;
+  cursor: pointer;
+}
+
+.form_auth_block input[type="file"] {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.with_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+}
+
+.with_btn span {
+  justify-self: left;
+  flex-shrink: 0;
+}
+
+.with_btn button {
+  width: 100%;
+  min-width: unset;
+  max-width: none;
+  min-height: unset;
+  padding: 0.5em;
+  margin: 0 .7em;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.response {
+  justify-content: left;
+}
+
+.response .remove_question {
+  justify-self: end;
+}
+
+.response input {
+  justify-self: left;
+  display: flex;
+}
+
+.response input[type=checkbox] {
+  border: 1px #000 solid;
+  width: 3em;
+  height: 3em;
+  flex-grow: 0;
+  margin: 0 1em 0 0;
+  min-width: 3em;
+  max-width: unset;
+}
+
+.response input[type=text], .response input[type=file], .response label {
+  border: 1px #000 solid;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.response label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  white-space: nowrap;
+  background-clip: text;
+  background: linear-gradient(to right, black 0 95%, transparent 99%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.response button {
+  flex-grow: 0;
+  flex-shrink: 1;
+  width: 3em;
+  font-weight: bold;
+  text-align: center;
+  max-width: unset;
+}
+
+.variant {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  background: #fff;
+  border: 1px #436fea ridge;
+  box-shadow: 0px 0px 0px #658d8455;
+  transform: scale(1);
+  transition: 1s;
+}
+
+.variant label {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
+.variant span {
+  align-self: center;
+}
+
+.variant img {
+  border: 2px #000 solid;
+  width: 100%;
+}
+
+.variant input {
+  margin-right: 1em;
+  width: 3em;
+  height: 3em;
+}
+
+.true {
+  box-shadow: 0px 0px 30px #658d84;
+  transform: scale(1.1);
+}
+
+.false {
+  box-shadow: 0px 0px 15px red;
+  transform: scale(0.95);
+}
+
+ol {
+  margin: 0;
+  list-style-type: none;
+}
